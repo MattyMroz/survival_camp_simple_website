@@ -240,6 +240,8 @@ textarea {
 }
 
 /* =============== BUTTONS =============== */
+
+/* =============== BUTTONS =============== */
 .button__area {
     display: flex;
     align-items: center;
@@ -251,16 +253,22 @@ textarea {
 
 .button {
     display: inline-block;
-    font-size: var(--h2-font-size);
+    font-size: var(--button-font-size);
     font-family: var(--bold-font);
     /* text-transform: uppercase; */
     letter-spacing: -1px;
-    padding: .4em 1.4em;
+    padding: .3em 1.4em;
     background-color: var(--text-color);
     color: var(--body-color);
-    border-radius: 50px;
+    border-radius: 8px;
     border: none;
     transition: .1s;
+}
+
+.button__disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: none;
 }
 
 .button:hover {
@@ -292,7 +300,7 @@ textarea {
             rgb(128, 0, 255) 90%,
             rgb(255, 0, 255) 100%);
     background-size: 600% 600%;
-    border-radius: 50px;
+    border-radius: 10px;
     animation: AnimateBorder 4s ease infinite;
     -webkit-animation: AnimateBorder 4s ease infinite;
     -moz-animation: AnimateBorder 4s ease infinite;
@@ -309,6 +317,23 @@ textarea {
 .button__wrapper:active .button__bg {
     filter: blur(10px);
     transition: filter .2s ease-in;
+}
+
+/* Nowa klasa dla przezroczystego przycisku */
+.button--transparent {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+}
+
+.button--transparent:hover {
+    background-color: var(--text-color);
+    color: var(--body-color);
+}
+
+.button--transparent:active {
+    transform: scale(.9);
+    transition: .1s;
 }
 
 @-webkit-keyframes AnimateBorder {
@@ -372,7 +397,6 @@ textarea {
     100% {
         transform-origin: right center;
         transform: scaleX(0);
-
     }
 }
 
