@@ -393,42 +393,6 @@ textarea {
     /* filter: drop-shadow(0 0 3rem var(--shadow-color-2)); */
 }
 
-.music__controller {
-    position: absolute;
-    top: 20%;
-    right: 5%;
-    width: 60px;
-    height: 60px;
-    z-index: var(--z1000);
-    animation: spin infinite linear 10s;
-    border-radius: 50%;
-}
-
-#toggle__music-button {
-    position: absolute;
-    top: 20%;
-    right: 5%;
-    font-size: 4rem;
-    width: 60px;
-    height: 60px;
-    filter: drop-shadow(0 0 3rem var(--first-color)) drop-shadow(0 0 3rem var(--first-color-alt)) drop-shadow(0 0 3rem var(--first-color-alt));
-}
-
-#toggle__music-button.disabled {
-    filter: opacity(0.5) drop-shadow(0 0 3rem var(--first-color)) drop-shadow(0 0 3rem var(--first-color-alt)) drop-shadow(0 0 3rem var(--first-color-alt));
-}
-
-#toggle__music-button:hover {
-    transform: scale(1.3);
-    /* transition: .2s linear; */
-    border: 3px solid var(--first-color);
-    border-radius: 50%;
-}
-
-.ri-music-2-fill {
-    display: block;
-    animation: spin infinite linear 3s;
-}
 
 @keyframes spin {
     from {
@@ -968,12 +932,6 @@ textarea {
     :root {
         --title-font-size: 11.5rem;
         --subtitle-font-size: 4.5rem;
-    }
-
-    .music__controller {
-        position: absolute;
-        top: 20%;
-        right: 7%;
     }
 }
 
