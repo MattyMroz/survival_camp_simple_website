@@ -23,6 +23,32 @@
 /* =============== VARIABLES CSS =============== */
 :root {
     /* =============== LIGHT MODE =============== */
+    /* --first-color: hsla(220, 100%, 50%, 1);
+    --first-color-alt: hsla(275, 100%, 50%, 1);
+
+    --first-color-filter: var(--body-color);
+    --first-color-alt-filter: var(--body-color);
+
+    --secound-color: hsl(0, 0%, 0%);
+    --secound-color-alt: hsl(0, 0%, 0%);
+
+    --link-color: hsl(248, 100%, 62%);
+    --link-color-hover: hsl(248, 100%, 62%, 0.8);
+    --link-color-active: hsl(248, 100%, 62%, 0.5);
+
+    --selection-color: hsla(248, 100%, 62%, 0.75);
+
+    --title-color: hsl(0, 0%, 11%);
+    --text-color: hsl(0, 0%, 11%);
+    --text-color-alt: hsl(0, 0%, 15%);
+
+    --body-color: hsl(0, 18%, 91%);
+    --container-color: hsl(0, 18%, 91%);
+
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow-color-2: rgba(0, 0, 0, 0.2); */
+
+
     --first-color: rgb(255, 255, 255);
     --first-color-alt: rgb(255, 255, 255);
 
@@ -49,7 +75,7 @@
     --shadow-color-2: rgba(143, 143, 143, 0.2);
 
     /* ========== FONTS ========== */
-    --normal-font: 'Alegreya-Regular', sans-serif;
+    --normal-font: 'Times New Roman', sans-serif;
     --bold-font: 'Serenity-SerifHeavy', sans-serif;
     --italic-font: 'Serenity-SerifItalic', sans-serif;
 
@@ -60,16 +86,20 @@
     --section-title-font-size: 5rem;
     --section-subtitle-font-size: 3rem;
 
-    --h1-font-size: 3.2rem;
-    --h2-font-size: 2.4rem;
-    --h3-font-size: 1.872rem;
-    --normal-font-size: 1.6rem;
+    --h1-font-size: 4rem;
+    --h2-font-size: 3.5rem;
+    --h3-font-size: 2.5rem;
+    --normal-font-size: 2rem;
     --small-font-size: 1.328rem;
     --tiny-font-size: 1.072rem;
 
-
     --containter-width: 120rem;
     --containter-padding: 1.5rem;
+
+    --input-font-size: 1.8rem;
+    --textarea-font-size: 1.8rem;
+
+    --button-font-size: 2.2rem;
 
     /* ========== Z INDEXS ========== */
     --z-1: -1;
@@ -162,7 +192,7 @@ h6 {
 }
 
 p.normal__text {
-    font-size: var(--h2-font-size);
+    font-size: var(--normal-font-size);
     line-height: 1.2;
     letter-spacing: .1rem;
 }
@@ -423,7 +453,7 @@ textarea {
 
 .input:focus {
     outline: none;
-    border-color: var(--first-color-alt);
+    border-color: var(--white-color);
 }
 
 .input::placeholder {
@@ -491,7 +521,7 @@ textarea {
 
 .textarea:focus {
     outline: none;
-    border-color: var(--first-color-alt);
+    border-color: var(--white-color);
 }
 
 .textarea::placeholder {
@@ -704,7 +734,7 @@ textarea {
     display: flex;
     justify-self: space-between;
     align-items: center;
-    font-size: var(--h1-font-size);
+    font-size: var(--button-font-size);
     font-family: var(--bold-font);
     color: var(--title-color);
 }
@@ -733,7 +763,7 @@ textarea {
 
 .nav__link {
     position: relative;
-    font-size: var(--h3-font-size);
+    font-size: var(--button-font-size);
     color: var(--text-color);
     text-transform: uppercase;
     font-family: var(--bold-font);
