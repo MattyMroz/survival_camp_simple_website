@@ -245,8 +245,8 @@ $(document).ready(function () {
         let $hue = 220;
         let $increments = true;
 
-        const $particleCount = 3; // small is good
-        const $particleSize = 18;
+        const $particleCount = 1; // small is good
+        const $particleSize = 8;
         const $particleLineLength = 1;
 
         const $speedX = 3;
@@ -452,5 +452,81 @@ $(document).ready(function () {
             $music[0].play();
         });
     });
+
+    // ========== Contact Form ==========
+    $(function () {
+        const $form = $('#contactForm');
+        const $errorText = $('#errorText');
+        const $successText = $('#successText');
+
+        function validateForm(formData) {
+            const errorsList = [];
+
+            if (validator.isEmpty(formData.name)) {
+                errorsList.push('Name is required!');
+            } else if (!validator.isAlpha(formData.name.replace(/\s/g, ''), 'pl-PL')) {
+                errorsList.push('Name must be letters only!');
+            } else if (!validator.isLength(formData.name, { min: 2 })) {
+                errorsList.push('Name is too short!');
+            } else if (validator.isLength(formData.name, { max: 50 }) === false) {
+                errorsList.push('Name is too long!');
+            } else if (/^[A-Z]/.test(formData.name) === false) {
+                errorsList.push('Name must start with a capital!');
+            }
+
+            if (validator.isEmpty(formData.email)) {
+                errorsList.push('Email is required!');
+            } else if (!validator.isEmail(formData.email)) {
+                errorsList.push('Email is not valid!');
+            }
+
+            if (validator.isEmpty(formData.subject)) {
+                errorsList.push('Subject is required!');
+            } else if (!validator.isLength(formData.subject, { min: 5 })) {
+                errorsList.push('Subject is too short!');
+            } else if (validator.isLength(formData.subject, { max: 100 }) === false) {
+                errorsList.push('Subject is too long!');
+            }
+
+            if (validator.isEmpty(formData.message)) {
+                errorsList.push('Message is required!');
+            } else if (!validator.isLength(formData.message, { min: 10 })) {
+                errorsList.push('Message is too short!');
+            } else if (validator.isLength(formData.message, { max: 5000 }) === false) {
+                errorsList.push('Message is too long!');
+            }
+
+            return errorsList;
+        }
+
+        $form.on('submit', function (event) {
+            event.preventDefault();
+            const formData = {
+                name: $('#name').val(),
+                email: $('#email').val(),
+                subject: $('#subject').val(),
+                message: $('#message').val(),
+            };
+
+            const validationErrors = validateForm(formData);
+            if (validationErrors.length > 0) {
+                $errorText.text(validationErrors[0]).show();
+                $successText.hide();
+                setTimeout(() => {
+                    $errorText.hide();
+                }, 3000);
+            } else {
+                console.log('Form Data:', formData);
+                $successText.show();
+                $errorText.hide();
+                $form[0].reset();
+                setTimeout(() => {
+                    $successText.hide();
+                }, 3000);
+            }
+        });
+    });
+
+
 });
 
