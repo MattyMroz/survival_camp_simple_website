@@ -453,80 +453,85 @@ $(document).ready(function () {
         });
     });
 
-    // ========== Contact Form ==========
     $(function () {
         const $form = $('#contactForm');
+        const $name = $('#name');
+        const $email = $('#email');
+        const $subject = $('#subject');
+        const $message = $('#message');
         const $errorText = $('#errorText');
         const $successText = $('#successText');
+        let isSubmitting = false;
 
-        function validateForm(formData) {
-            const errorsList = [];
+        function validateForm() {
+            const errors = [];
 
-            if (validator.isEmpty(formData.name)) {
-                errorsList.push('Name is required!');
-            } else if (!validator.isAlpha(formData.name.replace(/\s/g, ''), 'pl-PL')) {
-                errorsList.push('Name must be letters only!');
-            } else if (!validator.isLength(formData.name, { min: 2 })) {
-                errorsList.push('Name is too short!');
-            } else if (validator.isLength(formData.name, { max: 50 }) === false) {
-                errorsList.push('Name is too long!');
-            } else if (/^[A-Z]/.test(formData.name) === false) {
-                errorsList.push('Name must start with a capital!');
+            if (validator.isEmpty($name.val().trim())) {
+                errors.push('Name is required!');
+            } else if (!validator.isAlpha($name.val().trim().replace(/\s/g, ''), 'pl-PL')) {
+                errors.push('Name must be letters only!');
+            } else if (!validator.isLength($name.val().trim(), { min: 2 })) {
+                errors.push('Name is too short!');
+            } else if (!validator.isLength($name.val().trim(), { max: 50 })) {
+                errors.push('Name is too long!');
+            } else if (!/^[A-ZĄĆĘŁŃÓŚŹŻ]/.test($name.val().trim())) {
+                errors.push('Name must start with a capital!');
             }
 
-            if (validator.isEmpty(formData.email)) {
-                errorsList.push('Email is required!');
-            } else if (!validator.isEmail(formData.email)) {
-                errorsList.push('Email is not valid!');
+            if (validator.isEmpty($email.val().trim())) {
+                errors.push('Email is required!');
+            } else if (!validator.isEmail($email.val().trim())) {
+                errors.push('Email is not valid!');
             }
 
-            if (validator.isEmpty(formData.subject)) {
-                errorsList.push('Subject is required!');
-            } else if (!validator.isLength(formData.subject, { min: 5 })) {
-                errorsList.push('Subject is too short!');
-            } else if (validator.isLength(formData.subject, { max: 100 }) === false) {
-                errorsList.push('Subject is too long!');
+            if (validator.isEmpty($subject.val().trim())) {
+                errors.push('Subject is required!');
+            } else if (!validator.isLength($subject.val().trim(), { min: 5 })) {
+                errors.push('Subject is too short!');
+            } else if (!validator.isLength($subject.val().trim(), { max: 100 })) {
+                errors.push('Subject is too long!');
             }
 
-            if (validator.isEmpty(formData.message)) {
-                errorsList.push('Message is required!');
-            } else if (!validator.isLength(formData.message, { min: 10 })) {
-                errorsList.push('Message is too short!');
-            } else if (validator.isLength(formData.message, { max: 5000 }) === false) {
-                errorsList.push('Message is too long!');
+            if (validator.isEmpty($message.val().trim())) {
+                errors.push('Message is required!');
+            } else if (!validator.isLength($message.val().trim(), { min: 10 })) {
+                errors.push('Message is too short!');
+            } else if (!validator.isLength($message.val().trim(), { max: 5000 })) {
+                errors.push('Message is too long!');
             }
 
-            return errorsList;
+            return errors;
         }
-
         $form.on('submit', function (event) {
             event.preventDefault();
-            const formData = {
-                name: $('#name').val(),
-                email: $('#email').val(),
-                subject: $('#subject').val(),
-                message: $('#message').val(),
-            };
-
-            const validationErrors = validateForm(formData);
-            if (validationErrors.length > 0) {
-                $errorText.text(validationErrors[0]).show();
+            if (isSubmitting) {
+                return;
+            }
+            isSubmitting = true;
+            const errors = validateForm();
+            if (errors.length > 0) {
+                $errorText.text(errors[0]).show();
                 $successText.hide();
                 setTimeout(() => {
                     $errorText.hide();
+                    isSubmitting = false;
                 }, 3000);
             } else {
-                console.log('Form Data:', formData);
+                console.log('Form Data:', {
+                    name: $name.val().trim(),
+                    email: $email.val().trim(),
+                    subject: $subject.val().trim(),
+                    message: $message.val().trim(),
+                });
                 $successText.show();
                 $errorText.hide();
                 $form[0].reset();
                 setTimeout(() => {
                     $successText.hide();
+                    isSubmitting = false;
                 }, 3000);
             }
         });
     });
-
-
 });
 
