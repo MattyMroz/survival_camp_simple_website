@@ -13,7 +13,7 @@ Projekt służył celom edukacyjnym i zaliczeniowym. Poniższe informacje dotycz
 ## Link do strony
 https://mattymroz.github.io/survival_camp_website/
 
-##Wymagania projektowe
+## Wymagania projektowe
 - Projekt wykonany jako spa (single page application), z wykorzystaniem elementó React lub jako kompletna aplikacja React (element nie jest obowiązakowy) ✅
 - formularz do wypełniania przez użytkownika powinien być rozbudowany o walidację zdefiniowanych reguł (pola wymagane, dozwolone znaki, długości wprowadzanych łańcuchów, sumy kontrolne - wymagane komunikacja zwrotna ouchybieniach) ✅
 - Tworzony projekt musi być zgodny z zasadami użyteczności i dostępności ✅
