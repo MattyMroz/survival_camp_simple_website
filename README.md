@@ -14,7 +14,7 @@ Projekt służył celom edukacyjnym i zaliczeniowym. Poniższe informacje dotycz
 https://forms.gle/SZaT8zkS4MTsMVa16
 
 ## Link do strony
-https://mattymroz.github.io/survival_camp_website/
+https://mattymroz.github.io/survival_camp_simple_website/
 
 ## Wymagania projektowe
 - Projekt wykonany jako SPA (single page application), z wykorzystaniem elementó React lub jako kompletna aplikacja React (element nie jest obowiązakowy) ✅
