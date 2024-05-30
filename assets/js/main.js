@@ -418,6 +418,7 @@ $(document).ready(function () {
 
     portfolioScroll();
 
+
     // ========== Contact Form ==========
     $(function () {
         const $form = $('#contactForm');
@@ -510,6 +511,5 @@ $(document).ready(function () {
             $answercont.css('maxHeight', 0);
         }
     });
-
 });
 
