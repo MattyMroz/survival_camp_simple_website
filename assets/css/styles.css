@@ -23,8 +23,8 @@
 /* =============== VARIABLES CSS =============== */
 :root {
     /* =============== LIGHT MODE =============== */
-    /* --first-color: hsla(220, 100%, 50%, 1);
-    --first-color-alt: hsla(275, 100%, 50%, 1);
+    --first-color: hsl(0, 0%, 11%);
+    --first-color-alt: hsl(0, 0%, 11%);
 
     --first-color-filter: var(--body-color);
     --first-color-alt-filter: var(--body-color);
@@ -32,11 +32,11 @@
     --secound-color: hsl(0, 0%, 0%);
     --secound-color-alt: hsl(0, 0%, 0%);
 
-    --link-color: hsl(248, 100%, 62%);
-    --link-color-hover: hsl(248, 100%, 62%, 0.8);
-    --link-color-active: hsl(248, 100%, 62%, 0.5);
+    --link-color: rgb(0, 0, 0);
+    --link-color-hover: rgba(0, 0, 0, 0.8);
+    --link-color-active: rgba(0, 0, 0, 0.5);
 
-    --selection-color: hsla(248, 100%, 62%, 0.75);
+    --selection-color: rgba(255, 255, 255, 0.8);
 
     --title-color: hsl(0, 0%, 11%);
     --text-color: hsl(0, 0%, 11%);
@@ -46,15 +46,11 @@
     --container-color: hsl(0, 18%, 91%);
 
     --shadow-color: rgba(0, 0, 0, 0.1);
-    --shadow-color-2: rgba(0, 0, 0, 0.2); */
+    --shadow-color-2: rgba(0, 0, 0, 0.2);
 
-    /*
-    rgb(237, 152, 0)
-    rgb(209, 101, 39)
-    rgb(67, 38, 43)
-    */
 
-    --first-color: rgb(255, 255, 255);
+    /* =============== DARK MODE =============== */
+    /* --first-color: rgb(255, 255, 255);
     --first-color-alt: rgb(255, 255, 255);
 
     --first-color-filter: var(--text-color);
@@ -77,7 +73,7 @@
     --container-color: #090B10;
 
     --shadow-color: rgba(143, 143, 143, 0.1);
-    --shadow-color-2: rgba(143, 143, 143, 0.2);
+    --shadow-color-2: rgba(143, 143, 143, 0.2); */
 
     /* ========== FONTS ========== */
     --normal-font: 'Times New Roman', sans-serif;
