@@ -236,23 +236,26 @@ $(document).ready(function () {
     });
 
     // ========== Particles ==========
+    // ========== PARTICLE - JS AND JQUERY ==========
     $(function () {
         const $canvas = $('#canvas')[0];
         const $ctx = $canvas.getContext('2d');
         $canvas.width = window.innerWidth;
         $canvas.height = window.innerHeight;
         const $particlesArray = [];
-        let $hue = 220;
+        let $hue = 5;
         let $increments = true;
 
-        const $particleCount = 1; // small is good
-        const $particleSize = 5;
+        const $particleCount = 0.5; // small is good
+        const $particleSize = 14;
         const $particleLineLength = 1;
 
-        const $speedX = 4;
+        const $speedX = 3;
         const halfSpeedX = $speedX / 2;
-        const $speedY = 4;
+        const $speedY = 3;
         const halfSpeedY = $speedY / 2;
+
+
 
         $(window).resize(function () {
             $canvas.width = window.innerWidth;
@@ -275,7 +278,7 @@ $(document).ready(function () {
         }
 
         // JQUERY nie działa :(
-        const $main = document.querySelector('main');
+        const $main = document.querySelector('.main');
 
         $main.addEventListener('click', ClickOrMove);
         $main.addEventListener('mousemove', ClickOrMove);
@@ -340,24 +343,22 @@ $(document).ready(function () {
         }
 
         function animate() {
-            // Rysowanie
+            // rysowanie
             $ctx.clearRect(0, 0, $canvas.width, $canvas.height);
             // $ctx.fillStyle = 'rgba(0, 0, 0, 0.02)';
             // $ctx.fillRect(0, 0, $canvas.width, $canvas.height);
 
-            // if ($increments) {
-            //     $hue += 2;
-            //     if ($hue >= 275) {
-            //         $increments = false;
-            //     }
-            // } else {
-            //     $hue -= 1;
-            //     if ($hue <= 220) {
-            //         $increments = true;
-            //     }
-            // }
-
-            $hue += 1;
+            if ($increments) {
+                $hue += 0.1;
+                if ($hue >= 55) {
+                    $increments = false;
+                }
+            } else {
+                $hue -= 0.1;
+                if ($hue <= 5) {
+                    $increments = true;
+                }
+            }
 
             // $canvas.style.filter = 'drop-shadow(0 0 3rem hsla(' + $hue + ', 100%, 50%, 0.5)) drop-shadow(0 0 1rem hsla(' + $hue + ', 100%, 50%, 0.5))';
 
@@ -372,7 +373,6 @@ $(document).ready(function () {
         }
         animate();
     });
-
 
     // ========== Music ==========
     // $(function () {
