@@ -98,14 +98,17 @@
     --small-font-size: 1.328rem;
     --tiny-font-size: 1.072rem;
 
-    --containter-width: 120rem;
-    --containter-padding: 1.5rem;
-
+    --button-font-size: 2.2rem;
+    --big-button-font-size: 3rem;
     --input-font-size: 1.8rem;
     --textarea-font-size: 1.8rem;
 
-    --button-font-size: 2.2rem;
-    --big-button-font-size: 3rem;
+    /* ========== CONTAINERS ========== */
+    --containter-width: 120rem;
+    --containter-padding: 1.5rem;
+
+    /* ========== SPACING ========== */
+    --margin-base-left-right: 10rem;
 
     /* ========== Z INDEXS ========== */
     --z-1: -1;
@@ -553,7 +556,7 @@ textarea {
     border-radius: 8px;
     border: 2px solid var(--text-color);
     width: 100%;
-    height: 15rem;
+    height: 17.7rem;
     resize: vertical;
     transition: .1s;
 }
@@ -891,11 +894,11 @@ textarea {
 .home__img {
     position: absolute;
     bottom: 0;
-    left: 25%;
-    width: 75%;
-    height: 90vh;
+    left: 0;
+    width: 100%;
+    height: 100vh;
     background-image: url(..//img/);
-    background-size: auto 100%;
+    background-size: auto 50%;
     background-position: bottom;
     background-repeat: no-repeat;
     z-index: var(--z-1);
@@ -960,104 +963,6 @@ textarea {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
-
-/* =============== SLIDE =============== */
-.slide__container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.slide__container .slide .slide__item {
-    width: 20rem;
-    /* Zwiększono szerokość kart */
-    height: 30rem;
-    /* Zwiększono wysokość kart */
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-    border-radius: 2rem;
-    box-shadow: 0 3rem 5rem var(--shadow-color);
-    background-position: 50% 50%;
-    background-size: cover;
-    display: inline-block;
-    transition: 0.5s;
-}
-
-.slide .slide__item:nth-child(1),
-.slide .slide__item:nth-child(2) {
-    top: 0;
-    left: 0;
-    transform: translate(0, 0);
-    border-radius: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.slide .slide__item:nth-child(3) {
-    left: 70%;
-}
-
-.slide .slide__item:nth-child(4) {
-    left: calc(70% + 25rem);
-}
-
-.slide .slide__item:nth-child(5) {
-    left: calc(70% + 50rem);
-}
-
-.slide .slide__item:nth-child(n + 6) {
-    left: calc(70% + 75rem);
-    opacity: 0;
-}
-
-.slide__item .slide__content {
-    position: absolute;
-    top: 50%;
-    left: 10rem;
-    width: 50rem;
-    text-align: left;
-    color: #eee;
-    transform: translate(0, -50%);
-    font-family: system-ui;
-    display: none;
-}
-
-.slide .slide__item:nth-child(2) .slide__content {
-    display: block;
-}
-
-.slide__title {
-    font-size: 4rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    opacity: 0;
-    animation: animate 1s ease-in-out 1 forwards;
-}
-
-.slide__subtitle {
-    font-size: 2rem;
-    opacity: 0;
-    animation: animate 1s ease-in-out 1 forwards;
-}
-
-@keyframes animate {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-
-
 
 .blast:hover {
     /* background: -webkit-linear-gradient(var(--first-color) 0%, var(--first-color-alt) 100%); */
@@ -1235,6 +1140,96 @@ textarea {
 .img__wrapper:hover {
     transform: scale(1.05);
     transition: all 0.2s;
+}
+
+/* =============== ABOUT US =============== */
+#about-us .container {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+}
+
+#about-us .container .content {
+    margin: 0;
+    grid-template-columns: 100%;
+}
+
+#about-us .container .content .data {
+    align-items: center;
+}
+
+.scroll {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 1rem 0;
+    margin: 2.5rem 0;
+    cursor: default;
+    overflow: scroll hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0px 1.25rem;
+    scrollbar-width: none;
+}
+
+.scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll.active {
+    cursor: grab;
+    cursor: -webkit-grab;
+}
+
+.scroll .card {
+    width: 35%;
+    height: 100%;
+    flex: 0 0 auto;
+    margin: 0 0 0 var(--margin-base-left-right);
+    border: none;
+    outline: none;
+    border-radius: 0.25rem;
+}
+
+.scroll .card:last-child {
+    margin: 0 var(--margin-base-left-right);
+}
+
+.scroll .card__image {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-top: 65%;
+}
+
+.scroll .card__image img.responsive {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.scroll .card:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+
+.scroll .card-inner {
+    width: 100%;
+    height: auto;
+    padding: 2rem 0;
+}
+
+.portfolio__big-text {
+    width: 100%;
+    height: auto;
 }
 
 /* =============== FOOTER =============== */
