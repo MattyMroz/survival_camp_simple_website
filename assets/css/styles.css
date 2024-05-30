@@ -83,7 +83,7 @@
     --title-font-size: 14rem;
     --subtitle-font-size: 5rem;
 
-    --section-title-font-size: 5rem;
+    --section-title-font-size: 6rem;
     --section-subtitle-font-size: 3rem;
 
     --h1-font-size: 4rem;
@@ -100,6 +100,7 @@
     --textarea-font-size: 1.8rem;
 
     --button-font-size: 2.2rem;
+    --big-button-font-size: 3rem;
 
     /* ========== Z INDEXS ========== */
     --z-1: -1;
@@ -193,8 +194,8 @@ h6 {
 
 p.normal__text {
     font-size: var(--normal-font-size);
-    line-height: 1.2;
-    letter-spacing: .1rem;
+    /* line-height: 1.2;
+    letter-spacing: .1rem; */
 }
 
 a {
@@ -215,6 +216,7 @@ a {
 .link:active {
     color: var(--link-color-active);
     text-decoration: none;
+    transition: none;
 }
 
 ul,
@@ -270,8 +272,36 @@ textarea {
 }
 
 /* =============== BUTTONS =============== */
+/* <!-- Normal Button -->
+<div class="button__area">
+    <div class="button__wrapper">
+        <button class="button" onclick="alert('Normal Button Clicked')">Normal Button</button>
+        <div class="button__bg"></div>
+    </div>
+</div>
+<!-- Disabled Button -->
+<div class="button__area">
+    <div class="button__wrapper">
+        <button class="button button__disabled" disabled>Disabled Button</button>
+        <div class="button__bg"></div>
+    </div>
+</div>
+<!-- Transparent Button -->
+<div class="button__area">
+    <div class="button__wrapper">
+        <button class="button button__transparent">Transparent
+            Button</button>
+    </div>
+</div> */
 
-/* =============== BUTTONS =============== */
+.center__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
 .button__area {
     display: flex;
     align-items: center;
@@ -293,6 +323,10 @@ textarea {
     border-radius: 8px;
     border: none;
     transition: .1s;
+}
+
+.big__button {
+    font-size: var(--big-button-font-size);
 }
 
 .button__disabled {
@@ -350,18 +384,18 @@ textarea {
 }
 
 /* Nowa klasa dla przezroczystego przycisku */
-.button--transparent {
+.button__transparent {
     background-color: transparent;
     color: var(--text-color);
     border: 2px solid var(--text-color);
 }
 
-.button--transparent:hover {
+.button__transparent:hover {
     background-color: var(--text-color);
     color: var(--body-color);
 }
 
-.button--transparent:active {
+.button__transparent:active {
     transform: scale(.9);
     transition: .1s;
 }
@@ -679,7 +713,6 @@ textarea {
     /* filter: drop-shadow(0 0 3rem var(--shadow-color-2)); */
 }
 
-
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -875,11 +908,13 @@ textarea {
     font-size: var(--title-font-size);
     font-family: var(--bold-font);
     color: var(--text-color);
-
     text-align: center;
     margin-bottom: 4rem;
-
     filter: drop-shadow(0 0 0.75rem var(--first-color)) drop-shadow(0 0 0.75rem var(--first-color-alt));
+}
+
+.home__title__br {
+    display: none;
 }
 
 .home__subtitle {
@@ -921,6 +956,122 @@ textarea {
     -webkit-text-fill-color: transparent;
 }
 
+
+/* =============== SLIDE =============== */
+.slide__container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slide__container .slide .slide__item {
+    width: 20rem;
+    /* Zwiększono szerokość kart */
+    height: 30rem;
+    /* Zwiększono wysokość kart */
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 2rem;
+    box-shadow: 0 3rem 5rem var(--shadow-color);
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.slide .slide__item:nth-child(1),
+.slide .slide__item:nth-child(2) {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide .slide__item:nth-child(3) {
+    left: 70%;
+}
+
+.slide .slide__item:nth-child(4) {
+    left: calc(70% + 25rem);
+}
+
+.slide .slide__item:nth-child(5) {
+    left: calc(70% + 50rem);
+}
+
+.slide .slide__item:nth-child(n + 6) {
+    left: calc(70% + 75rem);
+    opacity: 0;
+}
+
+.slide__item .slide__content {
+    position: absolute;
+    top: 50%;
+    left: 10rem;
+    width: 50rem;
+    text-align: left;
+    color: #eee;
+    transform: translate(0, -50%);
+    font-family: system-ui;
+    display: none;
+}
+
+.slide .slide__item:nth-child(2) .slide__content {
+    display: block;
+}
+
+.slide__title {
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
+}
+
+.slide__subtitle {
+    font-size: 2rem;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+.blast:hover {
+    /* background: -webkit-linear-gradient(var(--first-color) 0%, var(--first-color-alt) 100%); */
+    background: -webkit-linear-gradient(var(--text-color) 0%, var(--text-color) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* color: var(--second-color); */
+    transition: all 0.2s;
+}
+
+.blast.active__blast {
+    animation: rubberBand .8s alternate ease-out;
+    /* background: -webkit-linear-gradient(var(--first-color) 0%, var(--first-color-alt) 100%); */
+    background: -webkit-linear-gradient(var(--text-color) 0%, var(--text-color) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 @keyframes rubberBand {
     0% {
@@ -1146,6 +1297,10 @@ textarea {
     .home__title-svg {
         width: 90%;
     }
+
+    .home__title__br {
+        display: block;
+    }
 }
 
 @media screen and (max-width: 888px) {
@@ -1216,15 +1371,16 @@ textarea {
 
 @media screen and (max-width: 768px) {
     :root {
-        --title-font-size: 11.5rem;
-        --subtitle-font-size: 4.5rem;
+        --title-font-size: 13rem;
+        --subtitle-font-size: 4rem;
     }
 }
 
 @media screen and (max-width: 576px) {
     :root {
-        --title-font-size: 8rem;
-        --subtitle-font-size: 3rem;
+        --title-font-size: 10rem;
+        --subtitle-font-size: 3.5rem;
+        --big-button-font-size: 2.5rem;
     }
 
     .home {
@@ -1240,7 +1396,13 @@ textarea {
 
 @media screen and (max-width: 460px) {
     :root {
-        --title-font-size: 7rem;
+        --title-font-size: 8rem;
+        --subtitle-font-size: 3rem;
+    }
+
+    .center__buttons {
+        flex-direction: column;
+        gap: 1.4rem;
     }
 }
 

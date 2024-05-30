@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .slide_container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slide_container .slide .slide__item {
+            width: 16.5rem;
+            height: 25rem;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            border-radius: 2rem;
+            box-shadow: 0 3rem 5rem #505050;
+            background-position: 50% 50%;
+            background-size: cover;
+            display: inline-block;
+            transition: 0.5s;
+        }
+
+        .slide .slide__item:nth-child(1),
+        .slide .slide__item:nth-child(2) {
+            top: 0;
+            left: 0;
+            transform: translate(0, 0);
+            border-radius: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide .slide__item:nth-child(3) {
+            left: 60%;
+        }
+
+        .slide .slide__item:nth-child(4) {
+            left: calc(60% + 21rem);
+        }
+
+        .slide .slide__item:nth-child(5) {
+            left: calc(60% + 43rem);
+        }
+
+        .slide .slide__item:nth-child(n + 6) {
+            left: calc(60% + 65rem);
+            opacity: 0;
+        }
+
+        .slide__item .content {
+            position: absolute;
+            top: 50%;
+            left: 10rem;
+            width: 30rem;
+            text-align: left;
+            color: #eee;
+            transform: translate(0, -50%);
+            font-family: system-ui;
+            display: none;
+        }
+
+        .slide .slide__item:nth-child(2) .content {
+            display: block;
+        }
+
+        .content .name {
+            font-size: 4rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            opacity: 0;
+            animation: animate 1s ease-in-out 1 forwards;
+        }
+
+        .content .des {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: animate 1s ease-in-out 0.3s 1 forwards;
+        }
+
+        .content button {
+            padding: 1rem 2rem;
+            border: none;
+            cursor: pointer;
+            opacity: 0;
+            animation: SlideAnimation 1s ease-in-out 0.6s 1 forwards;
+        }
+
+        @keyframes SlideAnimation {
+            from {
+                opacity: 0;
+                transform: translate(0, 10rem);
+                filter: blur(3.3rem);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(0);
+                filter: blur(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide_container">
+        <div class="slide">
+            <div class="slide__item" style="background-image: url(https://i.ibb.co/qCkd9jS/img1.jpg);">
+                <div class="content">
+
+                </div>
+            </div>
+            <div class="slide__item" style="background-image: url(https://i.ibb.co/jrRb11q/img2.jpg);">
+                <div class="content">
+
+                </div>
+            </div>
+            <div class="slide__item" style="background-image: url(https://i.ibb.co/NSwVv8D/img3.jpg);">
+                <div class="content">
+
+                </div>
+            </div>
+            <div class="slide__item" style="background-image: url(https://i.ibb.co/Bq4Q0M8/img4.jpg);">
+                <div class="content">
+
+                </div>
+            </div>
+            <div class="slide__item" style="background-image: url(https://i.ibb.co/jTQfmTq/img5.jpg);">
+                <div class="content">
+
+                </div>
+            </div>
+            <div class="slide__item" style="background-image: url(https://i.ibb.co/RNkk6L0/img6.jpg);">
+                <div class="content">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function moveSlides() {
+            const items = document.querySelectorAll('.slide__item');
+            document.querySelector('.slide').appendChild(items[0]);
+        }
+
+        setInterval(moveSlides, 1000);
+    </script>
+</body>
+
+</html>

@@ -220,7 +220,7 @@ $(document).ready(function () {
 
         $('html, body').animate({
             scrollTop: scrollTo
-        }, 1000);
+        }, 500);
     });
 
     // ========== Rubber Band Animation ==========
