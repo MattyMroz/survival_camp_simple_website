@@ -829,7 +829,7 @@ textarea {
     font-family: var(--bold-font);
     color: var(--text-color);
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
     filter: drop-shadow(0 0 0.75rem var(--first-color)) drop-shadow(0 0 0.75rem var(--first-color-alt));
 }
 
@@ -842,7 +842,7 @@ textarea {
     font-family: var(--bold-font);
     color: var(--text-color);
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 }
 
 .home__title-svg {
@@ -1003,7 +1003,7 @@ textarea {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    margin: 1rem 0;
+    margin: 3rem 0;
 }
 
 .data {
@@ -1112,6 +1112,16 @@ textarea {
     margin: 0 var(--margin-base-left-right);
 }
 
+.scroll .card:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+
+.scroll .card:active {
+    filter: brightness(0.6);
+    transition: 0s;
+}
+
 .scroll .card__image {
     position: relative;
     display: block;
@@ -1130,20 +1140,10 @@ textarea {
     object-fit: cover;
 }
 
-.scroll .card:hover {
-    transform: scale(1.1);
-    transition: all 0.5s ease;
-}
-
-.scroll .card-inner {
+.scroll .card__inner {
     width: 100%;
     height: auto;
     padding: 2rem 0;
-}
-
-.portfolio__big-text {
-    width: 100%;
-    height: auto;
 }
 
 /* =============== CONTACT US =============== */
@@ -1153,7 +1153,7 @@ textarea {
     flex-direction: column;
     align-items: center;
     border-radius: 8px;
-    max-width: 50rem;
+    max-width: 50vw;
 }
 
 .contact__form {
@@ -1299,7 +1299,7 @@ textarea {
     position: relative;
     display: flex;
     align-items: center;
-    padding: 2rem 8rem 2rem 2rem;
+    padding: 2rem;
     cursor: pointer;
 }
 
@@ -1326,7 +1326,7 @@ textarea {
 }
 
 .faq__answer {
-    padding: 0;
+    padding-top: 0.5rem;
 }
 
 .faq__question.active+.faq__answercont {
@@ -1394,6 +1394,11 @@ textarea {
 
 @media screen and (max-width: 320px) {} */
 
+@media screen and (max-width: 1200px) {
+    .scroll .card {
+        width: 50%;
+    }
+}
 
 @media screen and (max-width: 992px) {
     html {
@@ -1411,6 +1416,23 @@ textarea {
 
     .home__title__br {
         display: block;
+    }
+
+    .scroll .card {
+        height: 100%;
+        margin: 0 0 0 calc(var(--margin-base-left-right) / 2);
+    }
+
+    .scroll .card:last-child {
+        margin: 0 calc(var(--margin-base-left-right) / 2);
+    }
+
+    .scroll .card__image {
+        padding-top: 130%;
+    }
+
+    .scroll .card__inner .nav__link {
+        font-size: var(--section-subtitle-font-size);
     }
 }
 
@@ -1467,7 +1489,7 @@ textarea {
     }
 
     .data {
-        padding: 3rem !important;
+        padding: 2rem !important;
     }
 
     .contact__form__container {
@@ -1487,6 +1509,10 @@ textarea {
     :root {
         --title-font-size: 13rem;
         --subtitle-font-size: 4rem;
+    }
+
+    .scroll .card__inner .nav__link {
+        font-size: calc(var(--section-subtitle-font-size) * 0.8);
     }
 }
 

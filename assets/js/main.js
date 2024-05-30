@@ -374,85 +374,51 @@ $(document).ready(function () {
         animate();
     });
 
-    // ========== Music ==========
-    // $(function () {
-    //     const $toggleMusicButton = $('#toggle__music-button');
-    //     const $music = $('#music');
-
-    //     $music[0].play();
-
-    //     $music[0].play().catch(function (error) {
-    //         $toggleMusicButton.addClass('disabled');
-    //     });
-
-    //     $toggleMusicButton.click(() => {
-    //         if ($music[0].paused) {
-    //             $music[0].play();
-    //             $toggleMusicButton.removeClass('disabled');
-    //         } else {
-    //             $music[0].pause();
-    //             $toggleMusicButton.addClass('disabled');
-    //         }
-    //     });
-
-    //     $music.on('ended', () => {
-    //         $music[0].currentTime = 0;
-    //         $music[0].play();
-    //     });
-    // });
 
 
-    $(function () {
-        const $toggleMusicButton = $('#toggle__music-button');
-        const $music = $('#music');
 
-        function setCookie(name, value, days) {
-            const expires = new Date();
-            expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
-            document.cookie = name + '=' + value + ';expires=' + expires.toUTCString();
-        }
+    // ========== Portfolio Scroll ==========
+    function portfolioScroll() {
+        const scroll = document.querySelector(".scroll");
+        let isDown = false;
+        let scrollX;
+        let scrollLeft;
 
-        function getCookie(name) {
-            const nameEQ = name + '=';
-            const ca = document.cookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-            }
-            return null;
-        }
-
-        const musicCookie = getCookie('music');
-
-        if (musicCookie === 'playing') {
-            $music[0].play();
-        } else {
-            $music[0].pause();
-        }
-
-        $music[0].play().catch(function (error) {
-            $toggleMusicButton.addClass('disabled');
+        // Mouse Up Function
+        scroll.addEventListener("mouseup", () => {
+            isDown = false;
+            scroll.classList.remove("active");
         });
 
-        $toggleMusicButton.click(() => {
-            if ($music[0].paused) {
-                $music[0].play();
-                setCookie('music', 'playing', 365);
-                $toggleMusicButton.removeClass('disabled');
-            } else {
-                $music[0].pause();
-                setCookie('music', 'paused', 365);
-                $toggleMusicButton.addClass('disabled');
-            }
+        // Mouse Leave Function
+        scroll.addEventListener("mouseleave", () => {
+            isDown = false;
+            scroll.classList.remove("active");
         });
 
-        $music.on('ended', () => {
-            $music[0].currentTime = 0;
-            $music[0].play();
+        // Mouse Down Function
+        scroll.addEventListener("mousedown", (e) => {
+            e.preventDefault();
+            isDown = true;
+            scroll.classList.add("active");
+            scrollX = e.pageX - scroll.offsetLeft;
+            scrollLeft = scroll.scrollLeft;
         });
-    });
 
+        // Mouse Move Function
+        scroll.addEventListener("mousemove", (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            let element = e.pageX - scroll.offsetLeft;
+            let scrolling = (element - scrollX) * 2;
+            scroll.scrollLeft = scrollLeft - scrolling;
+        });
+
+    }
+
+    portfolioScroll();
+
+    // ========== Contact Form ==========
     $(function () {
         const $form = $('#contactForm');
         const $name = $('#name');
@@ -534,57 +500,16 @@ $(document).ready(function () {
         });
     });
 
-
-    function portfolioScroll() {
-        const scroll = document.querySelector(".scroll");
-        let isDown = false;
-        let scrollX;
-        let scrollLeft;
-
-        // Mouse Up Function
-        scroll.addEventListener("mouseup", () => {
-            isDown = false;
-            scroll.classList.remove("active");
-        });
-
-        // Mouse Leave Function
-        scroll.addEventListener("mouseleave", () => {
-            isDown = false;
-            scroll.classList.remove("active");
-        });
-
-        // Mouse Down Function
-        scroll.addEventListener("mousedown", (e) => {
-            e.preventDefault();
-            isDown = true;
-            scroll.classList.add("active");
-            scrollX = e.pageX - scroll.offsetLeft;
-            scrollLeft = scroll.scrollLeft;
-        });
-
-        // Mouse Move Function
-        scroll.addEventListener("mousemove", (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            let element = e.pageX - scroll.offsetLeft;
-            let scrolling = (element - scrollX) * 2;
-            scroll.scrollLeft = scrollLeft - scrolling;
-        });
-
-    }
-
-    portfolioScroll();
-
-});
-
-document.querySelectorAll('.faq__question').forEach(question => {
-    question.addEventListener('click', () => {
-        question.classList.toggle('active');
-        const answercont = question.nextElementSibling;
-        if (question.classList.contains('active')) {
-            answercont.style.maxHeight = answercont.scrollHeight + 'px';
+    // ========== FAQ ==========
+    $('.faq__question').on('click', function () {
+        $(this).toggleClass('active');
+        const $answercont = $(this).next();
+        if ($(this).hasClass('active')) {
+            $answercont.css('maxHeight', $answercont[0].scrollHeight + 'px');
         } else {
-            answercont.style.maxHeight = 0;
+            $answercont.css('maxHeight', 0);
         }
     });
+
 });
+
