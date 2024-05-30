@@ -246,12 +246,12 @@ $(document).ready(function () {
         let $increments = true;
 
         const $particleCount = 1; // small is good
-        const $particleSize = 8;
+        const $particleSize = 5;
         const $particleLineLength = 1;
 
-        const $speedX = 3;
+        const $speedX = 4;
         const halfSpeedX = $speedX / 2;
-        const $speedY = 3;
+        const $speedY = 4;
         const halfSpeedY = $speedY / 2;
 
         $(window).resize(function () {
