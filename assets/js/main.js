@@ -577,3 +577,14 @@ $(document).ready(function () {
 
 });
 
+document.querySelectorAll('.faq__question').forEach(question => {
+    question.addEventListener('click', () => {
+        question.classList.toggle('active');
+        const answercont = question.nextElementSibling;
+        if (question.classList.contains('active')) {
+            answercont.style.maxHeight = answercont.scrollHeight + 'px';
+        } else {
+            answercont.style.maxHeight = 0;
+        }
+    });
+});

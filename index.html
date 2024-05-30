@@ -54,7 +54,7 @@
                             <a href="#contact-us" class="nav__link navlink">Contact Us</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#FAQ" class="nav__link navlink">FAQ</a>
+                            <a href="#faq" class="nav__link navlink">FAQ</a>
                         </li>
                     </ul>
                 </nav>
@@ -89,12 +89,14 @@
                     <div class="button__area">
                         <div class="button__wrapper">
                             <a href="#contact-us" class="button big__button navlink">Contact Us</a>
-                            <div class="button__bg"></div>
+                            <div class="button__bg big__button__bg"></div>
                         </div>
                     </div>
                     <div class="button__area">
                         <div class="button__wrapper">
-                            <a href="#about-us" class="button button__transparent big__button navlink">Learn More</a>
+                            <a href="#about-us"
+                                class="button big__button button__transparent big__button__transparent navlink">Learn
+                                More</a>
                         </div>
                     </div>
                 </div>
@@ -122,7 +124,7 @@
         <section class="section" id="updates">
             <div class="container grid">
                 <div class="content">
-                    <div class="data">
+                    <div data-aos="fade-up" class="data">
                         <h2 data-aos="fade-up" class="section__title text__filter" aria-label="updates">
                             <span class="blast">U</span><span class="blast">p</span><span class="blast">d</span><span
                                 class="blast">a</span><span class="blast">t</span><span class="blast">e</span><span
@@ -159,14 +161,14 @@
                             </p>
                         </span>
                     </div>
-                    <div class="data">
+                    <div data-aos="fade-up" class="data">
                         <div class="img__wrapper">
                             <img data-aos="fade-up" src="assets/img/poster.jpg" alt="Poster for Survival Camp 2024">
                         </div>
                     </div>
                 </div>
                 <div class="content">
-                    <div class="data">
+                    <div data-aos="fade-up" class="data">
                         <h3 data-aos="fade-up" class="section__subtitle text__filter">
                             Shelter Building Workshops
                         </h3>
@@ -186,7 +188,7 @@
                             challenges. Make new friends, learn valuable skills, and enjoy the great outdoors!
                         </p>
                     </div>
-                    <div class="data">
+                    <div data-aos="fade-up" class="data">
                         <div class="img__wrapper">
                             <img data-aos="fade-up" src="assets/img/shelter_building_workshop.jpg"
                                 alt="Shelter Building Workshops">
@@ -199,11 +201,11 @@
         <section class="section" id="about-us">
             <div class="container grid">
                 <div class="content">
-                    <h2 data-aos="fade-up" class="section__title text__filter" aria-label="About Us">
+                    <p data-aos="fade-up" class="section__title text__filter" aria-label="About Us">
                         <span class="blast">A</span><span class="blast">b</span><span class="blast">o</span><span
                             class="blast">u</span><span class="blast">t</span>
                         <span class="blast">U</span><span class="blast">s</span>
-                    </h2>
+                    </p>
 
                     <div class="scroll" data-aos="slide-left" data-aos-duration="800" data-aos-delay="200"
                         data-aos-offset="0">
@@ -276,7 +278,7 @@
                     <span class="blast">U</span><span class="blast">s</span>
                 </h2>
                 <div class="content">
-                    <div class="data">
+                    <div data-aos="fade-up" class="data">
                         <h3 data-aos="fade-up" class="section__subtitle text__filter">
                             Have Questions?
                         </h3>
@@ -290,7 +292,7 @@
                             Our team is always ready to assist you with any inquiries. Contact us to ensure you have the
                             best possible adventure.
                         </p>
-                        <div class="contact__details">
+                        <div data-aos="fade-up" class="contact__details">
                             <h3 data-aos="fade-up" class="section__subtitle text__filter">
                                 Contact Information
                             </h3>
@@ -301,7 +303,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="data">
+                    <div data-aos="fade-up" class="data">
                         <h3 data-aos="fade-up" class="section__subtitle text__filter">
                             Send Us a Message
                         </h3>
@@ -345,10 +347,10 @@
         </section>
 
         <!-- =============== FAQ =============== -->
-        <section class="section" id="FAQ">
+        <section class="section" id="faq">
             <div class="container grid">
                 <div class="content">
-                    <div class="data">
+                    <div data-aos="fade-up" class="data">
                         <h2 data-aos="fade-up" class="section__title text__filter" aria-label="FAQ">
                             <span class="blast">F</span><span class="blast">A</span><span class="blast">Q</span>
                         </h2>
@@ -356,89 +358,160 @@
                             Frequently Asked Questions
                         </h3>
                         <div class="faq__item">
-                            <h4 data-aos="fade-up" class="faq__question text__filter">
-                                What is Survival Camp?
-                            </h4>
-                            <p data-aos="fade-up" class="faq__answer text__filter">
-                                Survival Camp is a comprehensive training program dedicated to teaching essential
-                                survival skills to individuals of all ages. Our experienced instructors provide hands-on
-                                training in various survival techniques, including fire-making, shelter-building,
-                                navigation, and first aid. Whether you are a beginner or an experienced outdoor
-                                enthusiast, our courses are designed to equip you with the knowledge and skills needed
-                                to survive in the wilderness.
-                            </p>
+                            <div class="faq__question">
+                                <h4 class="text__filter">
+                                    What is Survival Camp?
+                                </h4>
+                            </div>
+                            <div class="faq__answercont">
+                                <div class="faq__answer">
+                                    <p class="normal__text text__filter">
+                                        Survival Camp is a comprehensive training program dedicated to teaching
+                                        essential
+                                        survival skills to individuals of all ages. Our experienced instructors provide
+                                        hands-on
+                                        training in various survival techniques, including fire-making,
+                                        shelter-building,
+                                        navigation, and first aid. Whether you are a beginner or an experienced outdoor
+                                        enthusiast, our courses are designed to equip you with the knowledge and skills
+                                        needed
+                                        to survive in the wilderness.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                         <div class="faq__spacer"></div>
                         <div class="faq__item">
-                            <h4 data-aos="fade-up" class="faq__question text__filter">
-                                Who can join the Survival Camp?
-                            </h4>
-                            <p data-aos="fade-up" class="faq__answer text__filter">
-                                Anyone with an interest in learning survival skills can join Survival Camp. We offer
-                                courses for all skill levels, from beginners who have never set foot in the wilderness
-                                to advanced survivalists looking to hone their skills. Our programs are suitable for
-                                individuals, families, and groups, and we welcome participants of all ages. Whether you
-                                are looking to build confidence in the outdoors or prepare for an emergency situation,
-                                our courses are designed to meet your needs.
-                            </p>
+                            <div class="faq__question">
+                                <h4 class="text__filter">
+                                    Who can join the Survival Camp?
+                                </h4>
+                            </div>
+                            <div class="faq__answercont">
+                                <div class="faq__answer">
+                                    <p class="normal__text text__filter">
+                                        Anyone with an interest in learning survival skills can join Survival Camp. We
+                                        offer
+                                        courses for all skill levels, from beginners who have never set foot in the
+                                        wilderness
+                                        to advanced survivalists looking to hone their skills. Our programs are suitable
+                                        for
+                                        individuals, families, and groups, and we welcome participants of all ages.
+                                        Whether
+                                        you
+                                        are looking to build confidence in the outdoors or prepare for an emergency
+                                        situation,
+                                        our courses are designed to meet your needs.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                         <div class="faq__spacer"></div>
                         <div class="faq__item">
-                            <h4 data-aos="fade-up" class="faq__question text__filter">
-                                What should I bring to the camp?
-                            </h4>
-                            <p data-aos="fade-up" class="faq__answer text__filter">
-                                We recommend bringing comfortable outdoor clothing, sturdy footwear, a water bottle, and
-                                any personal items you may need. Specific gear requirements will be provided upon
-                                registration, but generally, you should be prepared for various weather conditions and
-                                outdoor activities. Essential items include a hat, sunscreen, insect repellent, and a
-                                small backpack. For overnight courses, you may need to bring camping gear such as a
-                                sleeping bag and tent. Detailed packing lists will be provided for each course.
-                            </p>
+                            <div class="faq__question">
+                                <h4 class="text__filter">
+                                    What should I bring to the camp?
+                                </h4>
+                            </div>
+                            <div class="faq__answercont">
+                                <div class="faq__answer">
+                                    <p class="normal__text text__filter">
+                                        We recommend bringing comfortable outdoor clothing, sturdy footwear, a water
+                                        bottle,
+                                        and
+                                        any personal items you may need. Specific gear requirements will be provided
+                                        upon
+                                        registration, but generally, you should be prepared for various weather
+                                        conditions
+                                        and
+                                        outdoor activities. Essential items include a hat, sunscreen, insect repellent,
+                                        and
+                                        a
+                                        small backpack. For overnight courses, you may need to bring camping gear such
+                                        as a
+                                        sleeping bag and tent. Detailed packing lists will be provided for each course.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                         <div class="faq__spacer"></div>
                         <div class="faq__item">
-                            <h4 data-aos="fade-up" class="faq__question text__filter">
-                                How long are the courses?
-                            </h4>
-                            <p data-aos="fade-up" class="faq__answer text__filter">
-                                Our courses vary in length from one-day workshops to week-long expeditions. One-day
-                                workshops typically focus on specific skills such as fire-making or navigation, while
-                                longer courses provide a more comprehensive survival training experience. Week-long
-                                expeditions offer an immersive experience where participants can practice and refine
-                                their skills in a real-world setting. Detailed information about each course's duration
-                                and itinerary can be found on our website.
-                            </p>
+                            <div class="faq__question">
+                                <h4 class="text__filter">
+                                    How long are the courses?
+                                </h4>
+                            </div>
+                            <div class="faq__answercont">
+                                <div class="faq__answer">
+                                    <p class="normal__text text__filter">
+                                        Our courses vary in length from one-day workshops to week-long expeditions.
+                                        One-day
+                                        workshops typically focus on specific skills such as fire-making or navigation,
+                                        while
+                                        longer courses provide a more comprehensive survival training experience.
+                                        Week-long
+                                        expeditions offer an immersive experience where participants can practice and
+                                        refine
+                                        their skills in a real-world setting. Detailed information about each course's
+                                        duration
+                                        and itinerary can be found on our website.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                         <div class="faq__spacer"></div>
                         <div class="faq__item">
-                            <h4 data-aos="fade-up" class="faq__question text__filter">
-                                Are meals provided during the camp?
-                            </h4>
-                            <p data-aos="fade-up" class="faq__answer text__filter">
-                                Yes, meals are provided during the camp. We offer a variety of meal options to
-                                accommodate different dietary needs, including vegetarian, vegan, and gluten-free
-                                options. Our meals are designed to be nutritious and energy-boosting, suitable for the
-                                physical activities involved in survival training. For overnight courses, we provide all
-                                meals, including breakfast, lunch, dinner, and snacks. Participants are welcome to bring
-                                their own snacks and personal food items if they have specific preferences or dietary
-                                restrictions.
-                            </p>
+                            <div class="faq__question">
+                                <h4 class="text__filter">
+                                    Are meals provided during the camp?
+                                </h4>
+                            </div>
+                            <div class="faq__answercont">
+                                <div class="faq__answer">
+                                    <p class="normal__text text__filter">
+                                        Yes, meals are provided during the camp. We offer a variety of meal options to
+                                        accommodate different dietary needs, including vegetarian, vegan, and
+                                        gluten-free
+                                        options. Our meals are designed to be nutritious and energy-boosting, suitable
+                                        for
+                                        the
+                                        physical activities involved in survival training. For overnight courses, we
+                                        provide
+                                        all
+                                        meals, including breakfast, lunch, dinner, and snacks. Participants are welcome
+                                        to
+                                        bring
+                                        their own snacks and personal food items if they have specific preferences or
+                                        dietary
+                                        restrictions.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                         <div class="faq__spacer"></div>
                         <div class="faq__item">
-                            <h4 data-aos="fade-up" class="faq__question text__filter">
-                                How do I register for a course?
-                            </h4>
-                            <p data-aos="fade-up" class="faq__answer text__filter">
-                                You can register for a course through our website. Simply select the course you are
-                                interested in and follow the registration instructions. Our online registration system
-                                is easy to use and allows you to choose your preferred course dates and make secure
-                                payments. Once registered, you will receive a confirmation email with detailed
-                                information about the course, including what to bring, where to meet, and any additional
-                                instructions. If you have any questions or need assistance with the registration
-                                process, our customer support team is available to help.
-                            </p>
+                            <div class="faq__question">
+                                <h4 class="text__filter">
+                                    How do I register for a course?
+                                </h4>
+                            </div>
+                            <div class="faq__answercont">
+                                <div class="faq__answer">
+                                    <p class="normal__text text__filter">
+                                        You can register for a course through our website. Simply select the course you
+                                        are
+                                        interested in and follow the registration instructions. Our online registration
+                                        system
+                                        is easy to use and allows you to choose your preferred course dates and make
+                                        secure
+                                        payments. Once registered, you will receive a confirmation email with detailed
+                                        information about the course, including what to bring, where to meet, and any
+                                        additional
+                                        instructions. If you have any questions or need assistance with the registration
+                                        process, our customer support team is available to help.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -470,7 +543,7 @@
                                 <a href="#contact-us" class="nav__link navlink">Contact Us</a>
                             </li>
                             <li class="nav__item">
-                                <a href="#FAQ" class="nav__link navlink">FAQ</a>
+                                <a href="#faq" class="nav__link navlink">FAQ</a>
                             </li>
                         </ul>
                     </div>
@@ -485,7 +558,7 @@
                         <p class="normal__text text__filter">
                             Survival Camp:
                             <br>
-                            <a href="mailto:info@survivalcamp.com" class="link">info@survivalcamp.com</a>
+                            <a href="mailto:info@survivalcamp.pl" class="link">info@survivalcamp.pl</a>
                         </p>
                         <p class="normal__text text__filter">
                             Repository:
