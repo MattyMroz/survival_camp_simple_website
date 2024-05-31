@@ -9,7 +9,7 @@ Projekt służył celom edukacyjnym i zaliczeniowym. Poniższe informacje dotycz
 - Michał Mycek
 - Marcel Podlecki
 - Bartłomiej Raj
-  
+
 ## Link do ankiety
 https://forms.gle/SZaT8zkS4MTsMVa16
 
