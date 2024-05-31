@@ -48,7 +48,6 @@
     --shadow-color: rgba(0, 0, 0, 0.1);
     --shadow-color-2: rgba(0, 0, 0, 0.2); */
 
-
     /* =============== DARK MODE =============== */
     --first-color: rgb(255, 255, 255);
     --first-color-alt: rgb(255, 255, 255);
@@ -393,7 +392,6 @@ textarea {
     transition: filter .2s ease-in;
 }
 
-/* Nowa klasa dla przezroczystego przycisku */
 .button__transparent {
     background-color: transparent;
     color: var(--text-color);
@@ -1012,7 +1010,7 @@ textarea {
     /* box-shadow: 0 4px 30px var(--shadow-color); */
 }
 
-/* co drufa data */
+/* co druga data */
 .data:nth-child(2n) {
     padding: 0 4rem 0 1rem;
 }
@@ -1044,7 +1042,6 @@ textarea {
     box-shadow: 0 4px 30px var(--shadow-color-2);
 }
 
-/* imh hover */
 .img__wrapper:hover {
     transform: scale(1.05);
     transition: all 0.2s;

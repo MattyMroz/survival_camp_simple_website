@@ -374,9 +374,6 @@ $(document).ready(function () {
         animate();
     });
 
-
-
-
     // ========== Portfolio Scroll ==========
     function portfolioScroll() {
         const scroll = document.querySelector(".scroll");
@@ -417,7 +414,6 @@ $(document).ready(function () {
     }
 
     portfolioScroll();
-
 
     // ========== Contact Form ==========
     $(function () {
